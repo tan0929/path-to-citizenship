@@ -12,6 +12,8 @@ import { ExpirationPlugin } from 'workbox-expiration';
 import { precacheAndRoute, createHandlerBoundToURL } from 'workbox-precaching';
 import { registerRoute } from 'workbox-routing';
 import { CacheFirst } from 'workbox-strategies';
+import {CacheableResponsePlugin} from 'workbox-cacheable-response';
+import {RangeRequestsPlugin} from 'workbox-range-requests';
 
 clientsClaim();
 
@@ -56,20 +58,20 @@ registerRoute(
     plugins: [
       // Ensure that once this runtime cache reaches a maximum size the
       // least-recently used images are removed.
-      new ExpirationPlugin({ maxEntries: 300 }),
+      new ExpirationPlugin({ maxEntries: 500 }),
+      
     ],
   })
 );
 
 registerRoute(
-  // Add in any other file extensions or routing criteria as needed.
-  ({ url }) => url.pathname.endsWith('.mp3') , // Customize this strategy as needed, e.g., by changing to CacheFirst.
+  ({ url }) =>url.pathname.endsWith('.mp3') , 
   new CacheFirst({
     cacheName: 'audio-cache',
     plugins: [
-      // Ensure that once this runtime cache reaches a maximum size the
-      // least-recently used images are removed.
-      new ExpirationPlugin({ maxEntries: 300 }),
+      new ExpirationPlugin({ maxEntries: 500 }),
+      new CacheableResponsePlugin({statuses: [200]}),
+      new RangeRequestsPlugin(),
     ],
   })
 );

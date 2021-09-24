@@ -20,7 +20,7 @@ function Card({data}){
     
       </div>
       <div className='audio-wrapper'>
-        <audio controls src={data.audio}>
+        <audio crossOrigin="anonymous" controls src={data.audio}>
       </audio>
       </div>
     </div>
