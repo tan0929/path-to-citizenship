@@ -70,7 +70,6 @@ registerRoute(
     cacheName: 'audio-cache',
     plugins: [
       new ExpirationPlugin({ maxEntries: 500 }),
-      new CacheableResponsePlugin({statuses: [200]}),
       new RangeRequestsPlugin(),
     ],
   })
