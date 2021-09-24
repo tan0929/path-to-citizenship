@@ -23,10 +23,14 @@ clientsClaim();
 // even if you decide not to use precaching. See https://cra.link/PWA
 // precacheAndRoute(self.__WB_MANIFEST);
 
+const ignored = self.__self.__WB_MANIFEST;
+
 precacheAndRoute([
   {url: '/index.html', revision: null },
   {url: '/audio', revision: null},
 ]);
+
+
 
 // Set up App Shell-style routing, so that all navigation requests
 // are fulfilled with your index.html shell. Learn more at
