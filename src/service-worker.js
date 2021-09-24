@@ -23,7 +23,7 @@ clientsClaim();
 // even if you decide not to use precaching. See https://cra.link/PWA
 // precacheAndRoute(self.__WB_MANIFEST);
 
-const ignored = self.__self.__WB_MANIFEST;
+const ignored = self.__WB_MANIFEST;
 
 precacheAndRoute([
   {url: '/index.html', revision: null },
