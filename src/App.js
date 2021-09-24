@@ -1,25 +1,27 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import './Styles/app.css'
+import ControlPanel from './Components/control-panel'
+import FlexCenterWrapper from './Components/flex-center-wrapper';
+import Card from './Components/card'
+import {getCard, getSortedCards} from './Core/card-manager'
+import {RecoilRoot} from 'recoil'
 
 function App() {
+
+  let sorted = getSortedCards()
+  let shuffled = [];
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <RecoilRoot>
+      <ControlPanel></ControlPanel>
+      <FlexCenterWrapper>
+        {sorted.map((data, index)=>{
+          return(
+            <Card data={data} key={index} />
+          )
+        })}
+      </FlexCenterWrapper>
+    </RecoilRoot>
   );
 }
 
