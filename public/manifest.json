@@ -4,9 +4,32 @@
   "description": "N400 Citizenship Test Questions",
   "icons": [
     {
-      "src": "favicon.svg",
-      "sizes": "16x16 32x32 64x64 128x128 192x192 512x512",
-      "type": "image/svg",
+      "src": "balloons32.png",
+      "sizes": "32x32",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "balloons64.png",
+      "sizes": "64x64",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "balloons128.png",
+      "sizes": "128x128",
+      "type": "image/png",
+      "purpose": "any"
+    },{
+      "src": "balloons256.png",
+      "sizes": "256x256",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "balloons512.png",
+      "sizes": "512x512",
+      "type": "image/png",
       "purpose": "any"
     }
   ],
