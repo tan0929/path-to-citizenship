@@ -27,7 +27,8 @@ const ignored = self.__WB_MANIFEST;
 
 precacheAndRoute([
   {url: '/index.html', revision: null },
-  {url: '/audio', revision: null},
+  {url: '/audio/questions/1.mp3', revision: null},
+  {url: '/audio/questions/2.mp3', revision: null},
 ]);
 
 
