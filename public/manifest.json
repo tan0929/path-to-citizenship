@@ -1,11 +1,13 @@
 {
   "short_name": "PTC",
   "name": "Path to Citizenship",
+  "description": "N400 Citizenship Test Questions",
   "icons": [
     {
       "src": "favicon.svg",
-      "sizes": "64x64 32x32 24x24 16x16",
-      "type": "image/svg"
+      "sizes": "any",
+      "type": "image/svg",
+      "purpose": "any maskable"
     }
   ],
   "start_url": ".",
