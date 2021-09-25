@@ -24,6 +24,8 @@ clientsClaim();
 // precacheAndRoute(self.__WB_MANIFEST);
 
 const ignored = self.__WB_MANIFEST;
+console.log(ignored, "ignoreddddddd");
+
 
 precacheAndRoute([
   {url: '/index.html', revision: null },
