@@ -23,15 +23,13 @@ clientsClaim();
 // even if you decide not to use precaching. See https://cra.link/PWA
 // precacheAndRoute(self.__WB_MANIFEST);
 
-const ignored = self.__WB_MANIFEST;
-console.log(ignored, "ignoreddddddd");
+let modified = self.__WB_MANIFEST;
 
+for(let i =1; i<=100; i++){
+  modified.push({url: `/audio/questions/${i}.mp3`});
+}
 
-precacheAndRoute([
-  {url: '/index.html', revision: null },
-  {url: '/audio/questions/1.mp3', revision: null},
-  {url: '/audio/questions/2.mp3', revision: null},
-]);
+precacheAndRoute(modified);
 
 
 
