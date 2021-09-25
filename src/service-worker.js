@@ -75,7 +75,7 @@ registerRoute(
 registerRoute(
   ({ url }) =>url.pathname.endsWith('.mp3') , 
   new CacheFirst({
-    cacheName: 'audio-cache',
+    // cacheName: 'audio-cache',
     plugins: [
       new ExpirationPlugin({ maxEntries: 200 }),
       new RangeRequestsPlugin(),
