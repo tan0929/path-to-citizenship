@@ -29,6 +29,10 @@ for(let i =1; i<=100; i++){
   modified.push({url: `/audio/questions/${i}.mp3`, revision: null});
 }
 
+modified.push({url: 'manifest.json', revision: null});
+
+modified.push({url: 'balloons24.png', revision: null});
+
 precacheAndRoute(modified);
 
 
