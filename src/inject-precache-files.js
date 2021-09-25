@@ -6,7 +6,7 @@ export function getPrecacheFiles(){
   result.push({url: 'manifest.json', revision: null})
   //audio
   for(let i =1; i<=100; i++){
-    precacheList.push({url: `/audio/questions/${i}.mp3`, revision: null});
+    result.push({url: `/audio/questions/${i}.mp3`, revision: null});
   }
   //icons
   result.push({url: 'balloons16.png', revision: null})
