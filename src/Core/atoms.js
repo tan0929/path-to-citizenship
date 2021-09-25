@@ -1,6 +1,6 @@
 import {atom} from 'recoil'
 
-const sortedListState = atom({
-  key: 'sortedListState',
-  default: [],
+const currentModeState = atom({
+  key: 'currentModeState',
+  default: "random",
 })

@@ -67,22 +67,22 @@ registerRoute(
     plugins: [
       // Ensure that once this runtime cache reaches a maximum size the
       // least-recently used images are removed.
-      new ExpirationPlugin({ maxEntries: 500 }),
+      new ExpirationPlugin({ maxEntries: 300 }),
     ],
   })
 );
 
-registerRoute(
-  ({ url }) =>url.pathname.endsWith('.mp3') , 
-  new CacheFirst({
-    cacheName: 'audio-cache',
-    plugins: [
-      new ExpirationPlugin({ maxEntries: 500 }),
-      new RangeRequestsPlugin(),
-      new CacheableResponsePlugin({statuses: [200]}),
-    ],
-  })
-);
+// registerRoute(
+//   ({ url }) =>url.pathname.endsWith('.mp3') , 
+//   new CacheFirst({
+//     cacheName: 'audio-cache',
+//     plugins: [
+//       new ExpirationPlugin({ maxEntries: 200 }),
+//       new RangeRequestsPlugin(),
+//       new CacheableResponsePlugin({statuses: [200]}),
+//     ],
+//   })
+// );
 
 // This allows the web app to trigger skipWaiting via
 // registration.waiting.postMessage({type: 'SKIP_WAITING'})
