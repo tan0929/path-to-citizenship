@@ -14,6 +14,8 @@ import { registerRoute } from 'workbox-routing';
 import { CacheFirst } from 'workbox-strategies';
 import {CacheableResponsePlugin} from 'workbox-cacheable-response';
 import {RangeRequestsPlugin} from 'workbox-range-requests';
+import injectPrecacheFiles from './inject-precache-files'
+
 
 clientsClaim();
 
@@ -23,15 +25,7 @@ clientsClaim();
 // even if you decide not to use precaching. See https://cra.link/PWA
 // precacheAndRoute(self.__WB_MANIFEST);
 
-let modified = self.__WB_MANIFEST;
-
-for(let i =1; i<=100; i++){
-  modified.push({url: `/audio/questions/${i}.mp3`, revision: null});
-}
-
-modified.push({url: 'manifest.json', revision: null});
-
-modified.push({url: 'balloons24.png', revision: null});
+let modified = injectPrecacheFiles(self.__WB_MANIFEST);
 
 precacheAndRoute(modified);
 

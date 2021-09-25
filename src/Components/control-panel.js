@@ -16,7 +16,7 @@ function ControlPanel(){
   return (
     <div id="panel">
       <PanelButton text={"All"} callback={Sort}/>
-      {/* <PanelButton text={"Shuffle"} callback={Sort}/> */}
+      <PanelButton text={"Random"} callback={Sort}/>
       {/* <PanelButton text={"Text"} callback={Sort}/>
       <PanelButton text={"Audio"} callback={Sort}/> */}
     </div>
