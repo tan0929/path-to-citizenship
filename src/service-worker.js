@@ -72,17 +72,17 @@ registerRoute(
   })
 );
 
-// registerRoute(
-//   ({ url }) =>url.pathname.endsWith('.mp3') , 
-//   new CacheFirst({
-//     cacheName: 'audio-cache',
-//     plugins: [
-//       new ExpirationPlugin({ maxEntries: 200 }),
-//       new RangeRequestsPlugin(),
-//       new CacheableResponsePlugin({statuses: [200]}),
-//     ],
-//   })
-// );
+registerRoute(
+  ({ url }) =>url.pathname.endsWith('.mp3') , 
+  new CacheFirst({
+    cacheName: 'audio-cache',
+    plugins: [
+      new ExpirationPlugin({ maxEntries: 200 }),
+      new RangeRequestsPlugin(),
+      new CacheableResponsePlugin({statuses: [200]}),
+    ],
+  })
+);
 
 // This allows the web app to trigger skipWaiting via
 // registration.waiting.postMessage({type: 'SKIP_WAITING'})
