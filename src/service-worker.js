@@ -26,7 +26,7 @@ clientsClaim();
 let modified = self.__WB_MANIFEST;
 
 for(let i =1; i<=100; i++){
-  modified.push({url: `/audio/questions/${i}.mp3`, null});
+  modified.push({url: `/audio/questions/${i}.mp3`, revision: null});
 }
 
 precacheAndRoute(modified);
