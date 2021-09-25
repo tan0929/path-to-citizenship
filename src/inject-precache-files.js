@@ -16,6 +16,7 @@ export function getPrecacheFiles(){
   result.push({url: 'balloons128.png', revision: null})
   result.push({url: 'balloons256.png', revision: null})
   result.push({url: 'balloons512.png', revision: null})
+  return result;
 }
 
 export default function injectPrecacheFiles(precacheList){

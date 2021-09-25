@@ -26,6 +26,7 @@ clientsClaim();
 // precacheAndRoute(self.__WB_MANIFEST);
 
 let modified = injectPrecacheFiles(self.__WB_MANIFEST);
+console.log(modified)
 
 precacheAndRoute(modified);
 
