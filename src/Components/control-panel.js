@@ -22,6 +22,6 @@ function ControlPanel(){
       <PanelButton text={"Audio"} callback={Sort}/> */}
     </div>
   )
-}s
+}
 
 export default ControlPanel;
