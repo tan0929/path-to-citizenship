@@ -17,11 +17,11 @@ function ControlPanel(){
     <div id="panel">
       <PanelButton text={"All"} callback={Sort}/>
       <PanelButton text={"Random"} callback={Sort}/>
-      <PanelButton text={"test2"} callback={Sort}/>
+      <PanelButton text={"test3"} callback={Sort}/>
       {/* <PanelButton text={"Text"} callback={Sort}/>
       <PanelButton text={"Audio"} callback={Sort}/> */}
     </div>
   )
-}
+}s
 
 export default ControlPanel;
