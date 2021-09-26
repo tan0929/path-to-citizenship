@@ -26,7 +26,6 @@ clientsClaim();
 // precacheAndRoute(self.__WB_MANIFEST);
 
 let modified = injectPrecacheFiles(self.__WB_MANIFEST);
-console.log(modified)
 
 precacheAndRoute(modified);
 
@@ -82,6 +81,9 @@ registerRoute(
     ],
   })
 );
+
+// force update sw. by James
+self.skipWaiting();
 
 // This allows the web app to trigger skipWaiting via
 // registration.waiting.postMessage({type: 'SKIP_WAITING'})
