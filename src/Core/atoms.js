@@ -15,5 +15,10 @@ export const allCardsState = atom({
 
 export const randomCardState = atom({
   key: 'randomCardState',
-  default: getRandomCard(getSortedCards())
+  default: getRandomCard(getSortedCards()),
+})
+
+export const flipControlState = atom({
+  key: 'flipControlState',
+  default: false,
 })

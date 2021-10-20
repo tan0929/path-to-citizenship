@@ -2,7 +2,18 @@
     width: 120px;
     height: 40px;
     margin: 60px;
-    font-size: 1.5em;
+    font-size: 2em;
+    color: #eee;
+    background-color: rgb(69,135,175);
+    transition: 0.2s;
+}
+
+#refresh:hover{
+    background-color: rgb(115, 174, 211);
+}
+
+#refresh:active{
+    background-color: lightslategray;
 }
 
 .space{
