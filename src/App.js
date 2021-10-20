@@ -1,26 +1,35 @@
 import React from 'react'
 import './Styles/app.css'
 import ControlPanel from './Components/control-panel'
-import FlexCenterWrapper from './Components/flex-center-wrapper';
-import Card from './Components/card'
-import {getSortedCards} from './Core/card-manager'
+import Home from './Pages/home'
+import Random from './Pages/random'
+
 import {RecoilRoot} from 'recoil'
+
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+} from "react-router-dom";
+
 
 function App() {
 
-  let sorted = getSortedCards()
-  // let shuffled = [];
+
 
   return (
     <RecoilRoot>
-      <ControlPanel></ControlPanel>
-      <FlexCenterWrapper>
-        {sorted.map((data, index)=>{
-          return(
-            <Card data={data} key={index} />
-          )
-        })}
-      </FlexCenterWrapper>
+      <Router>
+        <ControlPanel></ControlPanel>
+        <Switch>
+          <Route exact path="/">
+            <Home />
+          </Route>
+          <Route path="/random">
+            <Random />
+          </Route>
+        </Switch>
+      </Router>
     </RecoilRoot>
   );
 }

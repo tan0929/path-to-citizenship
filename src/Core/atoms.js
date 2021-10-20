@@ -1,6 +1,19 @@
 import {atom} from 'recoil'
+import options from './options'
+import {getSortedCards, getRandomCard} from './card-manager'
 
-const currentModeState = atom({
-  key: 'currentModeState',
-  default: "random",
+
+export const currentOptionsState = atom({
+  key: 'currentOptionsState',
+  default: options,
+})
+
+export const allCardsState = atom({
+  key: 'allCardsState',
+  default: getSortedCards(),
+})
+
+export const randomCardState = atom({
+  key: 'randomCardState',
+  default: getRandomCard(getSortedCards())
 })
