@@ -2,10 +2,16 @@ import '../Styles/card.scoped.css'
 import Flip from  'react-card-flip'
 import {useState} from 'react'
 import { getOptionValue } from '../Core/options'
+import { useRecoilState } from 'recoil'
+import {flipControlState} from '../Core/atoms'
 
 
-function Card({data, options}){
-  const [flip, setFlip] = useState(false)
+
+function Card({data, options, flipControl}){
+  const [forceFlip, setForceFlip] = useRecoilState(flipControlState);
+  const [clickFlip, setClickFlip] = useState(false)
+  const flip = flipControl? forceFlip: clickFlip;
+  const setFlip = flipControl? setForceFlip : setClickFlip;
   const text = getOptionValue(options, 'text');
   const audio = getOptionValue(options, 'audio');
   return(
