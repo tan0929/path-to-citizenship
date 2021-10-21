@@ -13,11 +13,11 @@ function Card({data, options}){
     {text ?
       <div onClick={()=>setFlip(!flip)}>
         <Flip isFlipped={flip}>
-          <div className='front text'>
+          <div className='front text clickable'>
             <img src={data.front} alt="text front" />
             {!audio && <div className="empty-bottom"></div>}
           </div>
-          <div className='back text'>
+          <div className='back text clickable'>
             <img src={data.back} alt="text back"/>
             {!audio && <div className="empty-bottom"></div>}
           </div>
